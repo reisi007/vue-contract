@@ -1,0 +1,122 @@
+@import 'tailwindcss/base';
+
+@import 'tailwindcss/components';
+
+@import 'tailwindcss/utilities';
+
+@layer base {
+    h1 {
+        @apply text-2xl;
+    }
+
+    h2 {
+        @apply text-xl;
+    }
+
+    h3 {
+        @apply text-lg
+    }
+
+    p {
+        @apply mt-4 mb-4
+    }
+
+    html, body, .content, #app {
+        @apply h-full
+    }
+
+    main {
+        @apply h-auto
+    }
+}
+
+.step {
+    @apply border-4 border-dashed border-reisishot-light rounded-lg m-4 px-4 pt-4
+}
+
+.step h2, .step h3 {
+    @apply text-center
+}
+
+.step img {
+    @apply mx-auto
+}
+
+.button-bar {
+    @apply inline-flex m-2 justify-center w-full
+}
+
+.button, button {
+    @apply font-bold py-2 px-4 rounded-l
+
+}
+
+.button-primary {
+    @apply bg-reisishot text-gray-800
+}
+
+
+.button-success {
+    @apply button-primary hover:bg-reisishot-light
+}
+
+.fail {
+    @apply bg-red-900 text-gray-100
+}
+
+.button-fail {
+    @apply fail hover:bg-red-600
+}
+
+
+.button-primary-large {
+    @apply button-primary w-full mt-4
+}
+
+.button-gray, button:disabled {
+    @apply bg-gray-900 text-gray-500
+}
+
+input {
+    @apply w-full my-2 p-1 border border-gray-400
+}
+
+form.touched input:invalid:not(:placeholder-shown) {
+    @apply border-red-400
+}
+
+form.touched input:valid {
+    @apply border-green-400
+}
+
+.faint {
+    @apply text-gray-500
+}
+
+.faint i {
+    @apply text-gray-700
+}
+
+label {
+    @apply block text-sm font-medium text-gray-700
+}
+
+.mail-sent {
+    @apply text-xl text-center align-middle h-full
+}
+
+.mail-sent .strong {
+    @apply text-2xl text-reisishot
+}
+
+.light {
+    @apply text-sm font-medium
+}
+
+.content {
+    @apply py-6 sm:px-6 lg:px-8 h-full
+}
+
+.signature-button {
+    @apply border-solid border-2 border-gray-700 hover:bg-gray-700 hover:text-white
+}
