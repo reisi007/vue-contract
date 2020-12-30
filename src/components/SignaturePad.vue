@@ -42,14 +42,12 @@ export default {
       signaturPad.clear();
     },
     recreateSignaturPad: function () {
-      console.log("setup signatur pad")
       const signaturCanvas = this.$refs.signaturCanvas;
       let data = null;
       if (signaturPad != null) {
         data = signaturPad.toData();
         signaturPad.off();
       }
-      console.log("Signatur Pad active", signaturPad, data, "@canvas", signaturCanvas)
       signaturPad = new SignaturePad(signaturCanvas)
       if (data) {
         signaturPad.fromData(data)
