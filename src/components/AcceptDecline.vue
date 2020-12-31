@@ -36,6 +36,14 @@ export default {
       this.isStepOk = false;
     }
   },
+  mounted() {
+    this.$store.commit("addStep")
+  },
+  unmounted() {
+    this.$store.commit("removeStep")
+    if (this.isStepOk)
+      this.$store.commit("minus")
+  },
   computed: {
     readOnlyMode: function () {
       return this.$store.state.readOnlyMode

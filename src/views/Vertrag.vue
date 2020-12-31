@@ -8,8 +8,13 @@
       <SimpleStep filename="3"></SimpleStep>
       <SimpleStep filename="4"></SimpleStep>
       <SimpleStep filename="5"></SimpleStep>
-      <SimpleStep filename="6"></SimpleStep>
+      <Veroeffentlichung></Veroeffentlichung>
       <SimpleStep filename="7"></SimpleStep>
+      <div class="step">
+        <h2>Zusätzliche Anmerkungen</h2>
+        <div class="faint text-center">Diese Anmerkungen sind optional</div>
+        <TextArea></TextArea>
+      </div>
     </div>
 
     <div class="state"> Bisher wurden {{ acceptedSteps }} von {{ steps }} Teilen akzeptiert.</div>
@@ -46,12 +51,13 @@
 import SimpleStep from "../components/SimpleStep.vue";
 import ModelStep from "../components/ModelStep.vue";
 import SignaturePad from "../components/SignaturePad.vue";
+import Veroeffentlichung from "../components/Veroeffentlichung.vue";
+import TextArea from "../components/TextArea.vue";
 
 export default {
-  components: {SignaturePad, ModelStep, SimpleStep},
+  components: {TextArea, Veroeffentlichung, SignaturePad, ModelStep, SimpleStep},
   data: function () {
     return {
-      steps: 8,
       signRequested: false,
       signed: false,
       mailSent: false
@@ -94,6 +100,9 @@ export default {
     },
     email: function () {
       return this.$store.state.email
+    },
+    steps: function () {
+      return this.$store.state.steps;
     }
   }
 }

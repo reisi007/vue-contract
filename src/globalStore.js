@@ -4,6 +4,7 @@ export function initStore() {
     return new Store({
         state: {
             readOnlyMode: false,
+            steps: 0,
             acceptedSteps: 0,
             email: ''
         },
@@ -13,6 +14,12 @@ export function initStore() {
             },
             minus(state) {
                 state.acceptedSteps--;
+            },
+            addStep(state) {
+                state.steps++;
+            },
+            removeStep(state) {
+                state.steps--;
             },
             changeEMail(state, email) {
                 state.email = email;

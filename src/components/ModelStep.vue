@@ -74,6 +74,14 @@ export default {
       return form.checkValidity()
     }
   },
+  mounted() {
+    this.$store.commit("addStep")
+  },
+  unmounted() {
+    this.$store.commit("removeStep")
+    if (this.formValid)
+      this.$store.commit("minus")
+  },
   computed: {
     maxDate() {
       const date = new Date();

@@ -13,6 +13,9 @@ module.exports = {
             // etc.
         ],
     },
+    plugins: [
+        require('@tailwindcss/forms'),
+    ],
     theme: {
         extend: {
             fontWeight: ['hover', 'focus'],
