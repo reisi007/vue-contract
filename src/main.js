@@ -5,6 +5,7 @@ import App from './App.vue'
 import {routes} from './routes.js'
 import {createRouter, createWebHistory} from 'vue-router'
 import {initStore} from "./globalStore"
+import VueMatomo from 'vue-matomo'
 
 let app = createApp(App, {})
 
@@ -34,5 +35,11 @@ if (import.meta.hot) {
 }
 
 app.use(router)
+
+app.use(VueMatomo, {
+    host: "https://analytics.reisishot.pictures",
+    siteId: 2,
+    router: router
+})
 
 app.mount('#app')
